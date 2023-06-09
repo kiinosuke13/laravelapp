@@ -8,9 +8,36 @@
 @endsection
 
 @section('content')
-    <p>ここが本文のコンテンツです。</p>
-   <p>Controller value<br>'message' = {{$message}}</p>
-   <p>ViewComposer value<br>'view_message' = {{$view_message}}</p>
+    <p>{{$msg}}</p>
+    <form action="/hello" method="post">
+        <table>
+            @csrf
+            <tr>
+                <th>name: </th>
+                <td>
+                    <input type="text" class="name">
+                </td>
+            </tr>
+            <tr>
+                <th>mail: </th>
+                <td>
+                    <input type="text" class="mail">
+                </td>
+            </tr>
+            <tr>
+                <th>age: </th>
+                <td>
+                    <input type="text" class="age">
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="submit" value="send">
+                </td>
+            </tr>
+        </table>
+    </form>
 @endsection
 
 @section('footer')
